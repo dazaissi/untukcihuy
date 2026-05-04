@@ -193,6 +193,8 @@ body {
 <script>
 const startDate = new Date("April 4, 2026 00:00:00").getTime();
 
+let lastMonthNotified = -1;
+
 function updateClock() {
   const now = new Date().getTime();
   const diff = now - startDate;
@@ -214,8 +216,8 @@ function updateClock() {
   document.getElementById("seconds").innerHTML =
     String(seconds).padStart(2,'0');
 
-// notifikasi setiap bulan
-   let lastMonthNotified = -1;
+  checkMonthlyNotification(days);
+}
 
 function checkMonthlyNotification(days) {
   const month = Math.floor(days / 30);
@@ -228,9 +230,6 @@ function checkMonthlyNotification(days) {
 
 function showNotification(month) {
   alert("💗 Selamat " + month + " bulan bersama! 💗");
-}
-
-  checkMonthlyNotification(days);
 }
 
 setInterval(updateClock, 1000);
