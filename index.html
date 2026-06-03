@@ -73,41 +73,13 @@ body {
   margin: auto;
 }
 
-/* days */
+/* jumlah hari */
 .days {
-  font-size: 40px;
+  font-size: 55px;
   font-weight: bold;
   color: #093C5D;
   text-decoration: underline;
-  margin-bottom: 20px;
-}
-
-/* jam */
-.clock {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 10px;
-}
-
-/* box time */
-.time-box {
-  font-size: 50px;
-  padding: 15px 20px;
-  border-radius: 15px;
-
-  background: rgba(255, 255, 255, 0.1);
-  backdrop-filter: blur(10px);
-
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-
-  transition: all 0.2s ease;
-}
-
-.separator {
-  font-size: 40px;
-  opacity: 0.7;
+  margin-bottom: 5px;
 }
 
 /* bagian bawah */
@@ -122,7 +94,7 @@ body {
   backdrop-filter: blur(20px);
   background: #629FAD;
   border-radius: 25px;
-  padding: 25px 40px;
+  padding: 35px 55px;
   display: inline-block;
 
   box-shadow: 0 8px 30px #0C2C55;
@@ -172,25 +144,17 @@ body {
 
 <div class="overlay"></div>
 
-<!-- konten tengah -->
+<!-- konten -->
 <div class="content">
   <div class="center">
     <div class="card">
       <div class="days" id="days">0 hari</div>
-
-      <div class="clock">
-        <div class="time-box" id="hours">00</div>
-        <div class="separator">:</div>
-        <div class="time-box" id="minutes">00</div>
-        <div class="separator">:</div>
-        <div class="time-box" id="seconds">00</div>
-      </div>
     </div>
   </div>
 
   <div class="bottom">
     <div>the days we’ve shared, sayang &lt;3.</div>
-    <div>thank you for everything. i'll miss our moments, i love you & i miss you!</div>
+    <div>thank you for everything. i'll miss our moments, i love you!</div>
   </div>
 </div>
 
@@ -201,29 +165,16 @@ const startDate = new Date("April 4, 2026 00:00:00").getTime();
 // tanggal berhenti
 const endDate = new Date("June 3, 2026 00:00:00").getTime();
 
-function updateClock() {
+function updateDays() {
   const diff = endDate - startDate;
 
   const totalSeconds = Math.floor(diff / 1000);
-
   const days = Math.floor(totalSeconds / (24 * 3600));
-  const hours = Math.floor((totalSeconds % (24 * 3600)) / 3600);
-  const minutes = Math.floor((totalSeconds % 3600) / 60);
-  const seconds = totalSeconds % 60;
 
   document.getElementById("days").innerHTML = days + " hari";
-
-  document.getElementById("hours").innerHTML =
-    String(hours).padStart(2, "0");
-
-  document.getElementById("minutes").innerHTML =
-    String(minutes).padStart(2, "0");
-
-  document.getElementById("seconds").innerHTML =
-    String(seconds).padStart(2, "0");
 }
 
-updateClock();
+updateDays();
 </script>
 
 </body>
