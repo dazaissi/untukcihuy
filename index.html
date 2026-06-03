@@ -63,7 +63,6 @@ body {
   text-align: center;
 }
 
-/* bagian tengah */
 .center {
   text-align: center;
   display: flex;
@@ -73,16 +72,22 @@ body {
   margin: auto;
 }
 
-/* jumlah hari */
 .days {
   font-size: 55px;
   font-weight: bold;
   color: #093C5D;
   text-decoration: underline;
-  margin-bottom: 5px;
+  margin-bottom: 10px;
 }
 
-/* bagian bawah */
+.date-range {
+  font-size: 18px;
+  font-weight: 500;
+  color: whitesmoke;
+  opacity: 0.9;
+  letter-spacing: 1px;
+}
+
 .bottom {
   margin-bottom: 50px;
   opacity: 0.8;
@@ -103,7 +108,7 @@ body {
   animation: fadeIn 1.5s ease;
 }
 
-  .secret-text {
+.secret-text {
   font-family: monospace;
   font-size: 12px;
   max-width: 650px;
@@ -111,7 +116,7 @@ body {
   opacity: 0.75;
   line-height: 1.6;
 }
-  
+
 @keyframes fadeIn {
   from {
     opacity: 0;
@@ -158,14 +163,16 @@ body {
   <div class="center">
     <div class="card">
       <div class="days" id="days">0 hari</div>
+      <div class="date-range">04 April - 04 June</div>
     </div>
   </div>
 
- <div class="bottom">
-  <div>the days we’ve shared, sayang &lt;3.</div>
-  <div class="secret-text">
-    69 27 6C 6C 20 6D 69 73 73 20 6F 75 72 20 6D 6F 6D 65 6E 74 73 2C 20 74 6F 64 61 79 20 69 20 6D 69 73 73 20 79 6F 
-    75 20 73 6F 20 6D 75 63 68 2E 2E 20 61 6E 77 2C 20 69 20 6C 6F 76 65 20 79 6F 75 21
+  <div class="bottom">
+    <div>the days we’ve shared, sayang &lt;3.</div>
+    <div class="secret-text">
+      69 27 6C 6C 20 6D 69 73 73 20 6F 75 72 20 6D 6F 6D 65 6E 74 73 2C 20 74 6F 64 61 79 20 69 20 6D 69 73 73 20 79 6F 
+      75 20 73 6F 20 6D 75 63 68 2E 2E 20 61 6E 77 2C 20 69 20 6C 6F 76 65 20 79 6F 75 21
+    </div>
   </div>
 </div>
 
